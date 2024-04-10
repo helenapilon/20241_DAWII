@@ -1,0 +1,22 @@
+module.exports = (sequelize, Sequelize) => {
+  const Produto = sequelize.define(
+    "produto",
+    {
+      nome: {
+        type: Sequelize.STRING,
+        //   primaryKey: true,
+        //   allowNull: false,
+      },
+      preco: {
+        type: Sequelize.FLOAT,
+      },
+      descricao: {
+        type: Sequelize.STRING,
+      },
+    },
+    //Garante que o nome da tabela no banco seja igual ao que informamos entre aspas com o sequelize.define()
+    { freezeTableName: true }
+  );
+
+  return Produto;
+};
